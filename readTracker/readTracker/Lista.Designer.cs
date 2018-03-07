@@ -32,6 +32,7 @@
             this.flowCarti = new System.Windows.Forms.FlowLayoutPanel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.adaugBtn = new System.Windows.Forms.Button();
+            this.strgBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,12 +73,22 @@
             this.adaugBtn.Text = "Adauga Carti";
             this.adaugBtn.UseVisualStyleBackColor = true;
             // 
+            // strgBtn
+            // 
+            this.strgBtn.Location = new System.Drawing.Point(257, 373);
+            this.strgBtn.Name = "strgBtn";
+            this.strgBtn.Size = new System.Drawing.Size(83, 23);
+            this.strgBtn.TabIndex = 8;
+            this.strgBtn.Text = "Sterge Carti";
+            this.strgBtn.UseVisualStyleBackColor = true;
+            // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(522, 401);
+            this.Controls.Add(this.strgBtn);
             this.Controls.Add(this.adaugBtn);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.flowCarti);
@@ -98,5 +109,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowCarti;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button adaugBtn;
+        private System.Windows.Forms.Button strgBtn;
     }
 }
