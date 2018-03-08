@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista));
             this.label1 = new System.Windows.Forms.Label();
             this.flowCarti = new System.Windows.Forms.FlowLayoutPanel();
             this.exitBtn = new System.Windows.Forms.Button();
             this.adaugBtn = new System.Windows.Forms.Button();
             this.strgBtn = new System.Windows.Forms.Button();
+            this.defPictureBox = new System.Windows.Forms.PictureBox();
+            this.flowCarti.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,6 +53,8 @@
             // 
             // flowCarti
             // 
+            this.flowCarti.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowCarti.Controls.Add(this.defPictureBox);
             this.flowCarti.Location = new System.Drawing.Point(12, 51);
             this.flowCarti.Name = "flowCarti";
             this.flowCarti.Size = new System.Drawing.Size(498, 315);
@@ -82,12 +88,24 @@
             this.strgBtn.Text = "Sterge Carti";
             this.strgBtn.UseVisualStyleBackColor = true;
             // 
+            // defPictureBox
+            // 
+            this.defPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.defPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("defPictureBox.Image")));
+            this.defPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.defPictureBox.Name = "defPictureBox";
+            this.defPictureBox.Size = new System.Drawing.Size(72, 106);
+            this.defPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.defPictureBox.TabIndex = 0;
+            this.defPictureBox.TabStop = false;
+            // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(522, 401);
+            this.ClientSize = new System.Drawing.Size(522, 402);
             this.Controls.Add(this.strgBtn);
             this.Controls.Add(this.adaugBtn);
             this.Controls.Add(this.exitBtn);
@@ -98,6 +116,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista";
             this.Load += new System.EventHandler(this.Lista_Load);
+            this.flowCarti.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.defPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +130,6 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button adaugBtn;
         private System.Windows.Forms.Button strgBtn;
+        private System.Windows.Forms.PictureBox defPictureBox;
     }
 }
