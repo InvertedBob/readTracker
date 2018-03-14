@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lista));
             this.label1 = new System.Windows.Forms.Label();
             this.flowCarti = new System.Windows.Forms.FlowLayoutPanel();
+            this.defPictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.adaugBtn = new System.Windows.Forms.Button();
             this.strgBtn = new System.Windows.Forms.Button();
-            this.defPictureBox = new System.Windows.Forms.PictureBox();
             this.flowCarti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,19 @@
             this.flowCarti.Size = new System.Drawing.Size(498, 315);
             this.flowCarti.TabIndex = 2;
             // 
+            // defPictureBox
+            // 
+            this.defPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.defPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.defPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("defPictureBox.Image")));
+            this.defPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.defPictureBox.Name = "defPictureBox";
+            this.defPictureBox.Size = new System.Drawing.Size(72, 106);
+            this.defPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.defPictureBox.TabIndex = 0;
+            this.defPictureBox.TabStop = false;
+            this.defPictureBox.Visible = false;
+            // 
             // exitBtn
             // 
             this.exitBtn.Location = new System.Drawing.Point(435, 373);
@@ -78,6 +91,7 @@
             this.adaugBtn.TabIndex = 7;
             this.adaugBtn.Text = "Adauga Carti";
             this.adaugBtn.UseVisualStyleBackColor = true;
+            this.adaugBtn.Click += new System.EventHandler(this.adaugBtn_Click);
             // 
             // strgBtn
             // 
@@ -87,18 +101,6 @@
             this.strgBtn.TabIndex = 8;
             this.strgBtn.Text = "Sterge Carti";
             this.strgBtn.UseVisualStyleBackColor = true;
-            // 
-            // defPictureBox
-            // 
-            this.defPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.defPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("defPictureBox.Image")));
-            this.defPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.defPictureBox.Name = "defPictureBox";
-            this.defPictureBox.Size = new System.Drawing.Size(72, 106);
-            this.defPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.defPictureBox.TabIndex = 0;
-            this.defPictureBox.TabStop = false;
             // 
             // Lista
             // 

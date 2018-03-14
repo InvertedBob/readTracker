@@ -111,6 +111,7 @@
             this.Name = "meniuPrinc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "meniuPrinc";
+            this.Load += new System.EventHandler(this.meniuPrinc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
