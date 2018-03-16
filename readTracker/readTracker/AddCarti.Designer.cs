@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCarti));
-            this.label1 = new System.Windows.Forms.Label();
+            this.titlu = new System.Windows.Forms.Label();
             this.tbAutor = new System.Windows.Forms.TextBox();
             this.lblAut = new System.Windows.Forms.Label();
             this.lblTitlu = new System.Windows.Forms.Label();
@@ -43,7 +43,6 @@
             this.cautaBtn = new System.Windows.Forms.Button();
             this.defPictureBox = new System.Windows.Forms.PictureBox();
             this.lblTitluRez = new System.Windows.Forms.Label();
-            this.lblAutorRez = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -51,17 +50,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.defPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // titlu
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(170, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "READ #";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titlu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.titlu.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlu.Location = new System.Drawing.Point(-1, 11);
+            this.titlu.Name = "titlu";
+            this.titlu.Size = new System.Drawing.Size(417, 27);
+            this.titlu.TabIndex = 2;
+            this.titlu.Text = "READ #";
+            this.titlu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbAutor
             // 
@@ -69,7 +67,6 @@
             this.tbAutor.Name = "tbAutor";
             this.tbAutor.Size = new System.Drawing.Size(188, 20);
             this.tbAutor.TabIndex = 3;
-            this.tbAutor.TextChanged += new System.EventHandler(this.tbAutor_TextChanged);
             // 
             // lblAut
             // 
@@ -81,7 +78,6 @@
             this.lblAut.Size = new System.Drawing.Size(99, 22);
             this.lblAut.TabIndex = 4;
             this.lblAut.Text = "Autor Carte";
-            this.lblAut.Click += new System.EventHandler(this.lblAut_Click);
             // 
             // lblTitlu
             // 
@@ -149,6 +145,7 @@
             this.dpTitlu.TabStop = true;
             this.dpTitlu.Text = "Dupa Titlu/Autor";
             this.dpTitlu.UseVisualStyleBackColor = true;
+            this.dpTitlu.CheckedChanged += new System.EventHandler(this.dpTitlu_CheckedChanged);
             // 
             // lblISBN
             // 
@@ -163,6 +160,7 @@
             // 
             // tbISBN
             // 
+            this.tbISBN.Enabled = false;
             this.tbISBN.Location = new System.Drawing.Point(7, 147);
             this.tbISBN.Name = "tbISBN";
             this.tbISBN.Size = new System.Drawing.Size(188, 20);
@@ -170,9 +168,9 @@
             // 
             // cautaBtn
             // 
-            this.cautaBtn.Location = new System.Drawing.Point(12, 308);
+            this.cautaBtn.Location = new System.Drawing.Point(12, 334);
             this.cautaBtn.Name = "cautaBtn";
-            this.cautaBtn.Size = new System.Drawing.Size(82, 35);
+            this.cautaBtn.Size = new System.Drawing.Size(90, 35);
             this.cautaBtn.TabIndex = 7;
             this.cautaBtn.Text = "Cauta";
             this.cautaBtn.UseVisualStyleBackColor = true;
@@ -185,35 +183,26 @@
             this.defPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("defPictureBox.Image")));
             this.defPictureBox.Location = new System.Drawing.Point(244, 63);
             this.defPictureBox.Name = "defPictureBox";
-            this.defPictureBox.Size = new System.Drawing.Size(165, 237);
-            this.defPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.defPictureBox.Size = new System.Drawing.Size(156, 238);
+            this.defPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.defPictureBox.TabIndex = 8;
             this.defPictureBox.TabStop = false;
             // 
             // lblTitluRez
             // 
-            this.lblTitluRez.AutoSize = true;
-            this.lblTitluRez.Location = new System.Drawing.Point(194, 308);
+            this.lblTitluRez.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitluRez.Location = new System.Drawing.Point(12, 310);
             this.lblTitluRez.Name = "lblTitluRez";
-            this.lblTitluRez.Size = new System.Drawing.Size(27, 13);
+            this.lblTitluRez.Size = new System.Drawing.Size(388, 21);
             this.lblTitluRez.TabIndex = 9;
             this.lblTitluRez.Text = "Titlu";
-            this.lblTitluRez.Click += new System.EventHandler(this.lblTitluRez_Click);
-            // 
-            // lblAutorRez
-            // 
-            this.lblAutorRez.AutoSize = true;
-            this.lblAutorRez.Location = new System.Drawing.Point(193, 330);
-            this.lblAutorRez.Name = "lblAutorRez";
-            this.lblAutorRez.Size = new System.Drawing.Size(32, 13);
-            this.lblAutorRez.TabIndex = 10;
-            this.lblAutorRez.Text = "Autor";
+            this.lblTitluRez.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(106, 308);
+            this.addBtn.Location = new System.Drawing.Point(131, 335);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(82, 35);
+            this.addBtn.Size = new System.Drawing.Size(90, 35);
             this.addBtn.TabIndex = 11;
             this.addBtn.Text = "Adauga";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -221,9 +210,9 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(12, 349);
+            this.exitBtn.Location = new System.Drawing.Point(318, 334);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(349, 23);
+            this.exitBtn.Size = new System.Drawing.Size(82, 36);
             this.exitBtn.TabIndex = 12;
             this.exitBtn.Text = "Iesire";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -234,15 +223,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(188)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(421, 381);
+            this.ClientSize = new System.Drawing.Size(415, 381);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.lblAutorRez);
             this.Controls.Add(this.lblTitluRez);
             this.Controls.Add(this.defPictureBox);
             this.Controls.Add(this.cautaBtn);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titlu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddCarti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -252,13 +240,12 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.defPictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titlu;
         private System.Windows.Forms.TextBox tbAutor;
         private System.Windows.Forms.Label lblAut;
         private System.Windows.Forms.Label lblTitlu;
@@ -272,7 +259,6 @@
         private System.Windows.Forms.TextBox tbISBN;
         private System.Windows.Forms.PictureBox defPictureBox;
         private System.Windows.Forms.Label lblTitluRez;
-        private System.Windows.Forms.Label lblAutorRez;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button exitBtn;
     }

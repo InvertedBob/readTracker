@@ -22,11 +22,12 @@ namespace readTracker
         {
             Lista lst = new Lista();
             lst.Show();
+            this.Hide();
         }
         /* Atunci cand este apasat butonul exitBtn este inchisa aceasta instanta a formei. */
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void meniuPrinc_Load(object sender, EventArgs e)

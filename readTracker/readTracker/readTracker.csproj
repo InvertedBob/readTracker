@@ -76,6 +76,12 @@
     <Compile Include="AddCarti.Designer.cs">
       <DependentUpon>AddCarti.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCarti.Designer.cs">
+      <DependentUpon>EditCarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Storage.cs" />
     <EmbeddedResource Include="AddCarti.resx">
       <DependentUpon>AddCarti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCarti.resx">
+      <DependentUpon>EditCarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>

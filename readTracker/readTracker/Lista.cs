@@ -13,7 +13,7 @@ namespace readTracker
     public partial class Lista : Form
     {
         List<PictureBox> libImg = new List<PictureBox>(); // O lista care contine cate un PictureBox cu coperta fiecarei carti din "librarie"
-
+        meniuPrinc princ = new meniuPrinc();
         public Lista()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace readTracker
         /* Atunci cand este apasat butonul exitBtn este inchisa aceasta instanta a formei. */
         private void exitBtn_Click(object sender, EventArgs e)
         {
+            princ.Show();
             this.Close();
         }
 
@@ -46,12 +47,16 @@ namespace readTracker
                 pic.ImageLocation = bk.ImageUrl;
                 pic.Load(bk.ImageUrl);
                 pic.Visible = true;
+
+                /* Fiecare coperta este legata de aceleasi evenimente de click/mouse-over pentru a reactiona la fel in aceste cazuri. */
                 pic.MouseEnter += intraMouse;
                 pic.MouseLeave += ieseMouse;
+                pic.Click += clickCoperta;
+
                 libImg.Add(pic);
             }
         }
-
+        /* Atunci cand este apasat butonul "Adauga Carti" este deschisa o fereastra pentru adaugarea cartilor.*/
         private void adaugBtn_Click(object sender, EventArgs e)
         {
             AddCarti addCrt = new AddCarti();
@@ -60,16 +65,25 @@ namespace readTracker
 
         }
 
+        /* Atunci cand mouse-ul ajunge pe coperta unei carti, se schimba stilul bordurii pentru a arata care coperta este selectata. */
         private void intraMouse(object sender, EventArgs e)
         {
             PictureBox pic = sender as PictureBox;
             pic.BorderStyle = BorderStyle.Fixed3D;
         }
 
+        /* Atunci cand mouse-ul nu mai este pe coperta, bordura acesteia revine la normal. */
         private void ieseMouse(object sender, EventArgs e)
         {
             PictureBox pic = sender as PictureBox;
             pic.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+        private void clickCoperta(object sender, EventArgs e)
+        {
+            EditCarti editCrt = new EditCarti();
+            editCrt.Show();
+            this.Close();
         }
 
     }

@@ -14,38 +14,45 @@ namespace readTracker
 {
     public partial class AddCarti : Form
     {
-
+        /* Creeaza o entitate a obiectului Client pentru a fi folosit in apelarea functiilor ce au legatura cu API-ul Goodreads */
         IGoodreadsClient client = GoodreadsClient.Create(Storage.ApiKey, Storage.ApiSecret);
         Book bk = new Book();
         public AddCarti()
         {
             InitializeComponent();
         }
-
-        private void tbAutor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAut_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /* Functia foloseste API-ul pentru a cauta cartea dorita in functie de ISBN,
+        daca nu se gaseste cartea cautata, este afisata o eroare.*/
         async private Task getBookByISBN(string isbn)
         {
-            bk = await client.Books.GetByIsbn(isbn);
-            lblTitluRez.Text = bk.Title;
-            defPictureBox.Load(bk.ImageUrl);
-            lblAutorRez.Text = bk.Authors.ToString();
+            try
+            {
+                lblTitluRez.Text = bk.Title;
+                defPictureBox.Load(bk.ImageUrl);
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Nu s-a gasit o carte pentru aceste date", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        /* Functia foloseste API-ul pentru a cauta cartea dorita in functie de titlu si optional autor,
+        daca nu se gaseste cartea cautata, este afisata o eroare.*/
         async private Task getBookByTitle(string title, string auth=null)
         {
-            bk = await client.Books.GetByTitle(title, auth);
-            lblTitluRez.Text = bk.Title;
-            defPictureBox.Load(bk.ImageUrl);
-            lblAutorRez.Text = bk.Authors.ToString();
+            try
+            {
+                bk = await client.Books.GetByTitle(title, auth);
+                lblTitluRez.Text = bk.Title;
+                defPictureBox.Load(bk.ImageUrl);
+            }
+            catch(NullReferenceException ex)
+            {
+                MessageBox.Show("Nu s-a gasit o carte pentru aceste date", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        /* Cand se apasa butonul de cautare, sunt apelate functiile corespunzatoare pentru fiecare metoda de cautare
+        sau se afiseaza o eroare daca un camp obligatoriu este gol */
         private void cautaBtn_Click(object sender, EventArgs e)
         {
             if(dpISBN.Checked==true)
@@ -66,11 +73,6 @@ namespace readTracker
             }
         }
 
-        private void lblTitluRez_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /* Atunci cand este apasat butonul exitBtn este inchisa aceasta instanta a formei. */
         private void exitBtn_Click(object sender, EventArgs e)
         {
@@ -78,11 +80,19 @@ namespace readTracker
             lst.Show();
             this.Close();
         }
-
+        /* Daca titlul cartii nu este gasit in "librarie" cartea este adaugata in lista, altfel se afiseaza o eroare */
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (Storage.libCarti.Find(x => x.Title == bk.Title) == null) { Storage.libCarti.Add(bk); Console.WriteLine("Da"); }
+            if (Storage.libCarti.Find(x => x.Title == bk.Title) == null)Storage.libCarti.Add(bk);
             else MessageBox.Show("Cartea exista deja in lista", "Cartea exista in lista", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        /* Atunci cand este selectat modul de cautare a unei carti, se activeaza/dezactiveaza campurile de text corespunzatoare */
+        private void dpTitlu_CheckedChanged(object sender, EventArgs e)
+        {
+            tbAutor.Enabled = dpTitlu.Checked;
+            tbTitlu.Enabled = dpTitlu.Checked;
+            tbISBN.Enabled = !dpTitlu.Checked;
         }
     }
 }
