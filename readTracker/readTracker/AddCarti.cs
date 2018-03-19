@@ -83,7 +83,11 @@ namespace readTracker
         /* Daca titlul cartii nu este gasit in "librarie" cartea este adaugata in lista, altfel se afiseaza o eroare */
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (Storage.libCarti.Find(x => x.Title == bk.Title) == null)Storage.libCarti.Add(bk);
+            if (Storage.libCarti.Find(x => x.Title == bk.Title) == null)
+            {
+                Storage.libCarti.Add(bk);
+                Storage.libCartiCit.Add(false);
+            }
             else MessageBox.Show("Cartea exista deja in lista", "Cartea exista in lista", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

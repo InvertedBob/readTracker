@@ -47,7 +47,6 @@ namespace readTracker
                 pic.ImageLocation = bk.ImageUrl;
                 pic.Load(bk.ImageUrl);
                 pic.Visible = true;
-
                 /* Fiecare coperta este legata de aceleasi evenimente de click/mouse-over pentru a reactiona la fel in aceste cazuri. */
                 pic.MouseEnter += intraMouse;
                 pic.MouseLeave += ieseMouse;
@@ -81,7 +80,9 @@ namespace readTracker
 
         private void clickCoperta(object sender, EventArgs e)
         {
+            PictureBox pic = sender as PictureBox;
             EditCarti editCrt = new EditCarti();
+            Storage.urlCrt = pic.ImageLocation;
             editCrt.Show();
             this.Close();
         }
