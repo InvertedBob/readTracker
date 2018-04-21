@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
+            this.progBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblProgres = new System.Windows.Forms.Label();
             this.cartiBtn = new System.Windows.Forms.Button();
             this.despreBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
@@ -48,23 +48,23 @@
             this.label1.Text = "READ #";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // progressBar1
+            // progBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(32, 40);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(407, 23);
-            this.progressBar1.TabIndex = 1;
+            this.progBar1.Location = new System.Drawing.Point(32, 40);
+            this.progBar1.Name = "progBar1";
+            this.progBar1.Size = new System.Drawing.Size(407, 23);
+            this.progBar1.TabIndex = 1;
             // 
-            // label2
+            // lblProgres
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(261, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mai ai de citit x carti din cele y propuse";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProgres.AutoSize = true;
+            this.lblProgres.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgres.Location = new System.Drawing.Point(106, 66);
+            this.lblProgres.Name = "lblProgres";
+            this.lblProgres.Size = new System.Drawing.Size(261, 16);
+            this.lblProgres.TabIndex = 2;
+            this.lblProgres.Text = "Mai ai de citit x carti din cele y propuse";
+            this.lblProgres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cartiBtn
             // 
@@ -104,13 +104,14 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.despreBtn);
             this.Controls.Add(this.cartiBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lblProgres);
+            this.Controls.Add(this.progBar1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "meniuPrinc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "meniuPrinc";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.meniuPrinc_FormClosed);
             this.Load += new System.EventHandler(this.meniuPrinc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -120,8 +121,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progBar1;
+        private System.Windows.Forms.Label lblProgres;
         private System.Windows.Forms.Button cartiBtn;
         private System.Windows.Forms.Button despreBtn;
         private System.Windows.Forms.Button exitBtn;

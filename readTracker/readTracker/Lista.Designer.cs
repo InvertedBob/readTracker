@@ -102,6 +102,7 @@
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.flowCarti);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -9,6 +9,7 @@ namespace readTracker
 {
     public static class Storage
     {
+        public static bool firstLoad = true;
         public static meniuPrinc meniu_principal = new meniuPrinc();
         public static Lista meniu_lista = new Lista();
         public static AddCarti meniu_adaug = new AddCarti();

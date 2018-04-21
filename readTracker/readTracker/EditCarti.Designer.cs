@@ -84,6 +84,7 @@
             this.stergCrt.TabIndex = 11;
             this.stergCrt.Text = "Sterge Carte";
             this.stergCrt.UseVisualStyleBackColor = true;
+            this.stergCrt.Click += new System.EventHandler(this.stergCrt_Click);
             // 
             // lblTitlu
             // 

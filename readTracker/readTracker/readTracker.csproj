@@ -155,6 +155,9 @@
     <Content Include="default-book-cover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="readSharp.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\default-book-cover.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

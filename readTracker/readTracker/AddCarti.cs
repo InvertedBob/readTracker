@@ -27,6 +27,7 @@ namespace readTracker
         {
             try
             {
+                bk = await client.Books.GetByIsbn(isbn);
                 lblTitluRez.Text = bk.Title;
                 defPictureBox.Load(bk.ImageUrl);
             }

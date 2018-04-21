@@ -45,13 +45,13 @@ namespace readTracker
                 pic.Size = defPictureBox.Size;
                 pic.Parent = defPictureBox.Parent;
                 pic.ImageLocation = bk.ImageUrl;
+                pic.SizeMode = defPictureBox.SizeMode;
                 pic.Load(bk.ImageUrl);
                 pic.Visible = true;
                 /* Fiecare coperta este legata de aceleasi evenimente de click/mouse-over pentru a reactiona la fel in aceste cazuri. */
                 pic.MouseEnter += intraMouse;
                 pic.MouseLeave += ieseMouse;
                 pic.Click += clickCoperta;
-
                 libImg.Add(pic);
             }
         }
@@ -86,6 +86,5 @@ namespace readTracker
             editCrt.Show();
             this.Close();
         }
-
     }
 }
